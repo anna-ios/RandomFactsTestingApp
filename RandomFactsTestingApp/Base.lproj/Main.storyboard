@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RandomFactsTestingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рандомный факт про котов:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEi-xu-ldI">
+                                <rect key="frame" x="400.5" y="20" width="223" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Dv0-pW-riK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загрузка..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcw-kF-ctG">
+                                <rect key="frame" x="10" y="51" width="1004" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJD-dO-eTr">
+                                <rect key="frame" x="421.5" y="79" width="181" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="q2N-qq-RKV"/>
+                                </constraints>
+                                <state key="normal" title="Перейти к тестированию"/>
+                                <connections>
+                                    <action selector="tapTestingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aZu-SX-hqv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VEi-xu-ldI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="7B5-rl-3dI"/>
+                            <constraint firstItem="qJD-dO-eTr" firstAttribute="top" secondItem="Hcw-kF-ctG" secondAttribute="bottom" constant="10" id="QNS-5M-N00"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qJD-dO-eTr" secondAttribute="bottom" constant="20" id="h95-O5-F3Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hcw-kF-ctG" secondAttribute="trailing" constant="10" id="hvR-Lc-zOv"/>
+                            <constraint firstItem="Hcw-kF-ctG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kAV-CR-yNO"/>
+                            <constraint firstItem="qJD-dO-eTr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lRb-6f-6Y9"/>
+                            <constraint firstItem="Hcw-kF-ctG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="srQ-31-D1O"/>
+                            <constraint firstItem="Hcw-kF-ctG" firstAttribute="top" secondItem="VEi-xu-ldI" secondAttribute="bottom" constant="10" id="t5k-P5-gzn"/>
+                            <constraint firstItem="VEi-xu-ldI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yls-Ji-dak"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="testingButton" destination="qJD-dO-eTr" id="OnZ-OV-Pa1"/>
+                        <outlet property="textLabel" destination="Hcw-kF-ctG" id="p08-Ys-hgI"/>
+                        <segue destination="CB5-uu-fmk" kind="show" identifier="segueIdentifier" id="n54-sP-LLP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38.671875" y="51.5625"/>
+        </scene>
+        <!--Testing View Controller-->
+        <scene sceneID="QWI-DK-hBf">
+            <objects>
+                <viewController id="CB5-uu-fmk" customClass="TestingViewController" customModule="RandomFactsTestingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aAA-TA-U1D">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="728"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9iT-Fx-PF1">
+                                <rect key="frame" x="20" y="20" width="664" height="211"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Исходный текст:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMI-jZ-irh">
+                                        <rect key="frame" x="0.0" y="0.0" width="664" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="GUJ-85-dt8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBr-oB-uxy">
+                                        <rect key="frame" x="0.0" y="30" width="664" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="6hD-cV-TLJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полученный текст:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUK-GX-QBL">
+                                        <rect key="frame" x="0.0" y="61" width="664" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20.5" id="bIA-o0-CHp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNH-wC-gqV">
+                                        <rect key="frame" x="0.0" y="91.5" width="664" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время исполнения:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0r-Ji-Rb1">
+                                        <rect key="frame" x="0.0" y="119.5" width="664" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20.5" id="36q-vF-3PT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aC-dc-ibj">
+                                        <rect key="frame" x="0.0" y="150" width="664" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="iNt-Gb-k19"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAm-P6-YRM">
+                                        <rect key="frame" x="0.0" y="181" width="664" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Z91-4W-T5t"/>
+                                            <constraint firstAttribute="height" constant="30" id="bkp-ku-dBJ"/>
+                                        </constraints>
+                                        <state key="normal" title="Тестировать"/>
+                                        <connections>
+                                            <action selector="startTesting:" destination="CB5-uu-fmk" eventType="touchUpInside" id="3Iy-PX-doL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="w08-WX-Cdh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9iT-Fx-PF1" firstAttribute="centerX" secondItem="w08-WX-Cdh" secondAttribute="centerX" id="0Mq-Qh-sMU"/>
+                            <constraint firstItem="9iT-Fx-PF1" firstAttribute="top" secondItem="w08-WX-Cdh" secondAttribute="top" constant="20" id="2uJ-gp-7yS"/>
+                            <constraint firstItem="w08-WX-Cdh" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9iT-Fx-PF1" secondAttribute="bottom" constant="20" id="Isu-RE-TYk"/>
+                            <constraint firstItem="9iT-Fx-PF1" firstAttribute="leading" secondItem="w08-WX-Cdh" secondAttribute="leading" constant="20" id="MVL-NS-Fz8"/>
+                            <constraint firstItem="w08-WX-Cdh" firstAttribute="trailing" secondItem="9iT-Fx-PF1" secondAttribute="trailing" constant="20" id="jYU-Z6-Bpp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VH6-ol-K9N"/>
+                    <connections>
+                        <outlet property="reversedTextLabel" destination="kNH-wC-gqV" id="SfI-FG-fBH"/>
+                        <outlet property="startTestingButton" destination="UAm-P6-YRM" id="swo-6K-Rgv"/>
+                        <outlet property="testTime" destination="1aC-dc-ibj" id="aZd-Cn-Gkt"/>
+                        <outlet property="textLabel" destination="DBr-oB-uxy" id="nnC-Sh-3ln"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="emi-Qi-Odd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714.84375" y="51.5625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
